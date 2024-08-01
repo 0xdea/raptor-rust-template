@@ -1,0 +1,20 @@
+[package]
+name = "{{project-name}}"
+version = "0.1.0"
+authors = ["Marco Ivaldi <raptor@0xdeadbeef.info>"]
+edition = "2021"
+description = "TODO"
+homepage = "https://0xdeadbeef.info/"
+repository = "https://github.com/0xdea/{{project-name}}"
+license = "MIT"
+keywords = ["TODO", "windows", "redteaming", "tactical-exploitation"]
+
+[dependencies]
+
+[profile.release]
+# see https://github.com/johnthagen/min-sized-rust
+strip = true
+opt-level = "z"
+lto = true
+# codegen-units = 1
+panic = "abort"
