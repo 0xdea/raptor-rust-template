@@ -1,7 +1,7 @@
-# {{project-name}}
-[![](https://img.shields.io/github/stars/0xdea/{{project-name}}.svg?style=flat&color=yellow)](https://github.com/0xdea/{{project-name}})
-[![](https://img.shields.io/github/forks/0xdea/{{project-name}}.svg?style=flat&color=green)](https://github.com/0xdea/{{project-name}})
-[![](https://img.shields.io/github/watchers/0xdea/{{project-name}}.svg?style=flat&color=red)](https://github.com/0xdea/{{project-name}})
+# raptor-rust-template
+[![](https://img.shields.io/github/stars/0xdea/raptor-rust-template.svg?style=flat&color=yellow)](https://github.com/0xdea/raptor-rust-template)
+[![](https://img.shields.io/github/forks/0xdea/raptor-rust-template.svg?style=flat&color=green)](https://github.com/0xdea/raptor-rust-template)
+[![](https://img.shields.io/github/watchers/0xdea/raptor-rust-template.svg?style=flat&color=red)](https://github.com/0xdea/raptor-rust-template)
 [![](https://img.shields.io/badge/twitter-%400xdea-blue.svg)](https://twitter.com/0xdea)
 [![](https://img.shields.io/badge/mastodon-%40raptor-purple.svg)](https://infosec.exchange/@raptor)
 
@@ -9,40 +9,15 @@
 >  
 > -- Halvar Flake 
 
-TODO
-
-Blog post:  
-TODO  
+My template for starting a Rust project, meant to be used with [cargo-generate](https://crates.io/crates/cargo-generate).
 
 See also:  
-TODO  
-
-## Cross-compiling
-```
-[macOS example]
-$ brew install mingw-w64
-$ rustup target add x86_64-pc-windows-gnu
-$ cargo build --release --target x86_64-pc-windows-gnu
-```
+https://crates.io/crates/cargo-generate  
+https://cargo-generate.github.io/cargo-generate/  
+https://github.com/topics/cargo-generate  
 
 ## Usage
 ```
-TODO
+$ cargo install cargo-generate
+$ cargo generate --git https://github.com/0xdea/raptor-rust-template
 ```
-
-## Examples
-TODO:
-```sh
-TODO
-```
-
-TODO:
-```sh
-TODO
-```
-
-## Tested on
-* TODO
-
-## TODO
-* TODO

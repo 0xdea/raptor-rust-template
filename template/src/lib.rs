@@ -1,16 +1,16 @@
 //!
-//! {{project-name}} - TODO
+//! {{project-name}} - {{short-desc}}
 //! Copyright (c) 2024 Marco Ivaldi <raptor@0xdeadbeef.info>
 //!
 //! > "It's important to be quotable."  
 //! >  
 //! > -- Halvar Flake  
 //!
-//! TODO
+//! {{long-desc}}
 //!
 //! # See also
 //! [TODO](TODO)  
-//! 
+//!
 //! # Cross-compiling
 //! ```sh
 //! [macOS example]
@@ -18,12 +18,12 @@
 //! $ rustup target add x86_64-pc-windows-gnu
 //! $ cargo build --release --target x86_64-pc-windows-gnu
 //! ```
-//! 
+//!
 //! # Usage
 //! //! ```sh
 //! TODO
 //! ```
-//! 
+//!
 //! # Examples
 //! TODO:
 //! ```sh
@@ -34,13 +34,13 @@
 //! ```sh
 //! TODO
 //! ```
-//! 
+//!
 //! # Tested on
 //! * TODO
-//! 
+//!
 //! # TODO
 //! * TODO
-//! 
+//!
 
 // use std::...;
 
@@ -59,3 +59,11 @@ pub fn run(action: &str) -> Result<(), Box<dyn Error>> {
 }
 
 // other functions ...
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn it_works() {
+        assert_eq!(2 + 2, 4);
+    }
+}

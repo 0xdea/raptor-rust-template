@@ -1,12 +1,12 @@
 //
-// {{project-name}} - TODO
+// {{project-name}} - {{short-desc}}
 // Copyright (c) 2024 Marco Ivaldi <raptor@0xdeadbeef.info>
 //
 // > "It's important to be quotable."  
 // >  
 // > -- Halvar Flake  
 //
-// TODO
+// {{long-desc}}
 //
 
 use std::env;
@@ -16,7 +16,7 @@ use std::process;
 const PROG: &str = "{{project-name}}.exe";
 
 fn main() {
-    println!("{{project-name}} - TODO");
+    println!("{{project-name}} - {{short-desc}}");
     println!("Copyright (c) 2024 Marco Ivaldi <raptor@0xdeadbeef.info>");
     println!();
 
