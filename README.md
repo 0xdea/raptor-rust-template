@@ -14,6 +14,7 @@ My template for starting a Rust project, meant to be used with [cargo-generate](
 See also:  
 https://crates.io/crates/cargo-generate  
 https://cargo-generate.github.io/cargo-generate/  
+https://github.com/rust-github/template  
 https://github.com/topics/cargo-generate  
 
 ## Usage

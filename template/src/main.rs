@@ -1,6 +1,6 @@
 //
 // {{project-name}} - {{short-desc}}
-// Copyright (c) 2024 Marco Ivaldi <raptor@0xdeadbeef.info>
+// Copyright (c) {{year}} Marco Ivaldi <raptor@0xdeadbeef.info>
 //
 // > "It's important to be quotable."  
 // >  
@@ -17,7 +17,7 @@ const PROG: &str = "{{project-name}}.exe";
 
 fn main() {
     println!("{{project-name}} - {{short-desc}}");
-    println!("Copyright (c) 2024 Marco Ivaldi <raptor@0xdeadbeef.info>");
+    println!("Copyright (c) {{year}} Marco Ivaldi <raptor@0xdeadbeef.info>");
     println!();
 
     // Parse command line arguments

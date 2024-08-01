@@ -1,6 +1,6 @@
 //!
 //! {{project-name}} - {{short-desc}}
-//! Copyright (c) 2024 Marco Ivaldi <raptor@0xdeadbeef.info>
+//! Copyright (c) {{year}} Marco Ivaldi <raptor@0xdeadbeef.info>
 //!
 //! > "It's important to be quotable."  
 //! >  
