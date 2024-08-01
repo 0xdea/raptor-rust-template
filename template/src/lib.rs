@@ -20,7 +20,7 @@
 //! ```
 //!
 //! # Usage
-//! //! ```sh
+//! ```sh
 //! TODO
 //! ```
 //!
@@ -42,9 +42,9 @@
 //! * TODO
 //!
 
-// use std::...;
+use std::error::Error;
 
-// use crate::...;
+// use ...;
 
 // const NAME: type = ...;
 
