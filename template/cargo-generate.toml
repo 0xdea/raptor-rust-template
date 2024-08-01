@@ -19,5 +19,5 @@ default = "2024"
 [conditional.'crate_type == "lib"']
 ignore = [ "src/main.rs" ]
 
-[conditional.'crate_type == "bin"']
-ignore = [ "src/lib.rs" ]
+#[conditional.'crate_type == "bin"']
+#ignore = [ "src/lib.rs" ]
