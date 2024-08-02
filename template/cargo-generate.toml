@@ -1,6 +1,11 @@
 [template]
 cargo_generate_version = ">=0.10.0"
 
+[hooks]
+init = ["init-script.rhai"]
+#pre = ["pre-script.rhai"]
+#post = ["post-script.rhai"]
+
 [placeholders.short-desc]
 type = "string"
 prompt = "Short description"
@@ -11,13 +16,5 @@ type = "string"
 prompt = "Long description"
 default = "TODO"
 
-[placeholders.year]
-type = "string"
-prompt = "Year"
-default = "2024"
-
 [conditional.'crate_type == "lib"']
 ignore = [ "src/main.rs" ]
-
-#[conditional.'crate_type == "bin"']
-#ignore = [ "src/lib.rs" ]
