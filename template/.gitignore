@@ -1,4 +1,5 @@
 /target
 .cargo-ok
 .DS_Store
+.idea
 {% if crate_type == "lib" %}Cargo.lock{% endif %}
