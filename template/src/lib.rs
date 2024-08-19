@@ -45,7 +45,7 @@
 // temporary annoying clippy configuration
 #![warn(
     clippy::all,
-    clippy::restriction,
+    //clippy::restriction,
     clippy::pedantic,
     clippy::nursery,
     clippy::cargo,
