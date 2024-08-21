@@ -7,7 +7,7 @@ description = "{{short-desc}}"
 homepage = "https://0xdeadbeef.info/"
 repository = "https://github.com/0xdea/{{project-name}}"
 license = "MIT"
-keywords = ["TODO", "windows", "redteaming", "tactical-exploitation"]
+keywords = ["TODO", "windows", "redteaming", "exploitation"]
 categories = ["command-line-utilities"]
 
 [dependencies]
