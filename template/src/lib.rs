@@ -42,7 +42,7 @@
 //! * TODO
 //!
 
-// temporary annoying clippy configuration
+// Temporary annoying clippy configuration
 #![warn(
     clippy::all,
     //clippy::restriction,
@@ -51,11 +51,18 @@
     clippy::cargo,
 )]
 
+// Standard library imports
 use std::error::Error;
 
+// External crate imports
+// use ...;
+
+// Internal imports
 // use ...;
 
 // const NAME: type = ...;
+
+// static NAME: type = ...;
 
 /// Dispatch to function implementing the selected action
 pub fn run(action: &str) -> Result<(), Box<dyn Error>> {
@@ -67,7 +74,7 @@ pub fn run(action: &str) -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-// other functions ...
+// Other functions ...
 
 #[cfg(test)]
 mod tests {
