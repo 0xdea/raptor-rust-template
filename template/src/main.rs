@@ -9,9 +9,20 @@
 // {{long-desc}}
 //
 
+// Standard library imports
 use std::env;
 use std::path::Path;
 use std::process;
+
+// External crate imports
+// use ...;
+
+// Internal imports
+// use ...;
+
+// const NAME: type = ...;
+
+// static NAME: type = ...;
 
 const PROG: &str = "{{project-name}}.exe";
 
