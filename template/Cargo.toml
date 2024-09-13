@@ -12,6 +12,12 @@ categories = ["command-line-utilities"]
 
 [dependencies]
 
+[lints.clippy]
+all = "warn"
+pedantic = "warn"
+nursery = "warn"
+cargo = "warn"
+
 [profile.release]
 # see https://github.com/johnthagen/min-sized-rust
 strip = true

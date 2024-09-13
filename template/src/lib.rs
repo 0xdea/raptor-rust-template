@@ -42,15 +42,6 @@
 //! * TODO
 //!
 
-// Temporary annoying clippy configuration
-#![warn(
-    clippy::all,
-    //clippy::restriction,
-    clippy::pedantic,
-    clippy::nursery,
-    clippy::cargo,
-)]
-
 // Standard library imports
 use std::error::Error;
 
