@@ -32,7 +32,7 @@ fn main() {
     let action = match args.len() {
         1 => "default",
         2 => &args[1].clone(),
-        _ => "-"
+        _ => "-",
     };
     if action.starts_with('-') {
         usage(prog);
