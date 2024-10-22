@@ -1,14 +1,3 @@
-//
-// {{project-name}} - {{short-desc}}
-// Copyright (c) {{year}} Marco Ivaldi <raptor@0xdeadbeef.info>
-//
-// > "It's important to be quotable."  
-// >  
-// > -- Halvar Flake  
-//
-// {{long-desc}}
-//
-
 // Standard library imports
 use std::env;
 use std::path::Path;
@@ -43,14 +32,10 @@ fn main() {
     let action = match args.len() {
         1 => "default",
         2 => &args[1].clone(),
-        _ => {
-            usage(prog);
-            process::exit(1);
-        }
+        _ => "-"
     };
     if action.starts_with('-') {
         usage(prog);
-        process::exit(1);
     }
 
     // Let's do it
@@ -63,11 +48,13 @@ fn main() {
     }
 }
 
-/// Print usage information
+/// Print usage information and exit
 fn usage(prog: &str) {
     println!("Usage:");
     println!(".\\{prog} TODO");
     println!("\nExamples:");
     println!(".\\{prog}");
     println!(".\\{prog} TODO");
+
+    process::exit(1);
 }
