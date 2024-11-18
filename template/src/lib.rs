@@ -8,23 +8,33 @@
 //!
 //! {{long-desc}}
 //!
-//! # See also
-//! [TODO](TODO)  
+//! ## Features
+//! * TODO
 //!
-//! # Cross-compiling
-//! ```sh
-//! [macOS example]
-//! $ brew install mingw-w64
-//! $ rustup target add x86_64-pc-windows-gnu
-//! $ cargo build --release --target x86_64-pc-windows-gnu
-//! ```
+//! ## Blog post
+//! * TODO
 //!
-//! # Usage
+//! ## See also
+//! * TODO
+//!
+//! ## Installing
+//! The easiest way to get the latest release is via [crates.io](https://crates.io/crates/{{project-name}}):
 //! ```sh
 //! TODO
 //! ```
 //!
-//! # Examples
+//! ## Compiling
+//! Alternatively, you can build from [source](https://github.com/0xdea/{{project-name}}):
+//! ```sh
+//! TODO
+//! ```
+//!
+//! ## Usage
+//! ```sh
+//! TODO
+//! ```
+//!
+//! ## Examples
 //! TODO:
 //! ```sh
 //! TODO
@@ -34,12 +44,15 @@
 //! ```sh
 //! TODO
 //! ```
-//!
-//! # Tested on
-//! * TODO
-//!
-//! # TODO
-//! * TODO
+//
+// ## Tested with
+// * IDA Pro 9.0.240925 on macOS arm64.
+//
+// ## Changelog
+// * <https://github.com/0xdea/{{project-name}}/blob/master/CHANGELOG.md>
+//
+// ## TODO
+// * TODO
 //!
 
 // Standard library imports
