@@ -44,16 +44,18 @@
 //! ```sh
 //! TODO
 //! ```
-//
-// ## Tested with
-// * IDA Pro 9.0.240925 on macOS arm64.
-//
-// ## Changelog
-// * <https://github.com/0xdea/{{project-name}}/blob/master/CHANGELOG.md>
-//
-// ## TODO
-// * TODO
 //!
+//! ## Tested on/with
+//! * TODO
+//!
+//! ## Changelog
+//! * <https://github.com/0xdea/{{project-name}}/blob/master/CHANGELOG.md>
+//!
+//! ## TODO
+//! * TODO
+//!
+
+#![doc(html_logo_url = "https://raw.githubusercontent.com/0xdea/{{project-name}}/master/.img/logo.png")]
 
 // Standard library imports
 use std::error::Error;

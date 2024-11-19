@@ -11,7 +11,7 @@ license = "MIT"
 keywords = ["TODO", "windows", "redteaming", "exploitation"]
 # see https://crates.io/categories
 categories = ["command-line-utilities"]
-# exclude = [".cargo/*", ".github/*", ".img/*", "tests/*"]
+exclude = [".cargo/*", ".github/*", ".img/*", "tests/*"]
 
 [dependencies]
 

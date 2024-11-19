@@ -13,7 +13,7 @@ use std::process;
 
 // static NAME: type = ...;
 
-const PROG: &str = "{{project-name}}.exe";
+const PROG: &str = "{{project-name}}";
 
 fn main() {
     println!("{{project-name}} - {{short-desc}}");
