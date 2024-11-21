@@ -13,10 +13,10 @@ use std::process;
 
 // static NAME: type = ...;
 
-const PROG: &str = "{{project-name}}";
+const PROG: &str = env!("CARGO_PKG_NAME");
 
 fn main() {
-    println!("{{project-name}} - {{short-desc}}");
+    println!("{PROG} - {{short-desc}}");
     println!("Copyright (c) {{year}} Marco Ivaldi <raptor@0xdeadbeef.info>");
     println!();
 
