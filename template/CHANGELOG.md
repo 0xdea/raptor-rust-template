@@ -39,7 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.0] - TODO
 
-* First release to be published on [crates.io](https://crates.io/).
+* First release to be published to [crates.io](https://crates.io/).
 
 [unreleased]: https://github.com/0xdea/{{project-name}}/compare/v0.1.1...HEAD
 
