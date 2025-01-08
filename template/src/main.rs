@@ -13,10 +13,11 @@ use std::process;
 
 // static NAME: type = ...;
 
-const PROG: &str = env!("CARGO_PKG_NAME");
+const PROGRAM: &str = env!("CARGO_PKG_NAME");
+const VERSION: &str = env!("CARGO_PKG_VERSION");
 
 fn main() {
-    println!("{PROG} - {{short-desc}}");
+    println!("{PROGRAM} {VERSION} - {{short-desc}}");
     println!("Copyright (c) {{year}} Marco Ivaldi <raptor@0xdeadbeef.info>");
     println!();
 
@@ -27,7 +28,7 @@ fn main() {
         .file_name()
         .unwrap()
         .to_str()
-        .unwrap_or(PROG);
+        .unwrap_or(PROGRAM);
 
     let action = match args.len() {
         1 => "default",
