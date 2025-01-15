@@ -22,7 +22,7 @@ TODO: screenshot?
 
 * TODO
 
-## Blog post:
+## Blog post
 
 * TODO
 
