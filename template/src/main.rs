@@ -52,10 +52,10 @@ fn main() {
 /// Print usage information and exit
 fn usage(prog: &str) {
     println!("Usage:");
-    println!(".\\{prog} TODO");
+    println!("$ {prog} TODO");
     println!("\nExamples:");
-    println!(".\\{prog}");
-    println!(".\\{prog} TODO");
+    println!("$ {prog}");
+    println!("$ {prog} TODO");
 
     process::exit(1);
 }
