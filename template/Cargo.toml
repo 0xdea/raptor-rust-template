@@ -14,6 +14,7 @@ categories = ["command-line-utilities"]
 exclude = [".cargo/*", ".github/*", ".img/*", "tests/*"]
 
 [dependencies]
+anyhow = "1.0"
 
 # [build-dependencies]
 

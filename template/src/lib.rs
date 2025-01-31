@@ -73,7 +73,7 @@ use std::error::Error;
 // static NAME: type = ...;
 
 /// Dispatch to function implementing the selected action
-pub fn run(action: &str) -> Result<(), Box<dyn Error>> {
+pub fn run(action: &str) -> anyhow::Result<()> {
     todo!();
     /*
     match action {
