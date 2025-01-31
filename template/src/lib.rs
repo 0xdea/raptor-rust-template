@@ -55,7 +55,9 @@
 //! * TODO
 //!
 
-#![doc(html_logo_url = "https://raw.githubusercontent.com/0xdea/{{project-name}}/master/.img/logo.png")]
+#![doc(
+    html_logo_url = "https://raw.githubusercontent.com/0xdea/{{project-name}}/master/.img/logo.png"
+)]
 
 // Standard library imports
 use std::error::Error;
@@ -72,12 +74,15 @@ use std::error::Error;
 
 /// Dispatch to function implementing the selected action
 pub fn run(action: &str) -> Result<(), Box<dyn Error>> {
+    todo!();
+    /*
     match action {
         "action1" => func1()?,
         _ => func2(action)?,
     }
 
     Ok(())
+    */
 }
 
 // Other functions ...
