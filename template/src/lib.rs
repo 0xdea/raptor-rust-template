@@ -20,16 +20,19 @@
 //! ## Installing
 //! The easiest way to get the latest release is via [crates.io](https://crates.io/crates/{{project-name}}):
 //! ```sh
-//! TODO
+//! $ cargo install {{project-name}}
 //! ```
 //!
 //! ## Compiling
 //! Alternatively, you can build from [source](https://github.com/0xdea/{{project-name}}):
 //! ```sh
-//! TODO
+//! $ git clone https://github.com/0xdea/{{project-name}}
+//! $ cd {{project-name}}
+//! $ cargo build --release
 //! ```
 //!
 //! ## Usage
+//! Run {{project-name}} as follows:
 //! ```sh
 //! TODO
 //! ```
@@ -45,11 +48,14 @@
 //! TODO
 //! ```
 //!
-//! ## Tested on/with
+//! ## Tested on
 //! * TODO
 //!
 //! ## Changelog
 //! * <https://github.com/0xdea/{{project-name}}/blob/master/CHANGELOG.md>
+//!
+//! ## Credits
+//! * TODO
 //!
 //! ## TODO
 //! * TODO
