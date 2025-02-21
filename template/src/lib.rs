@@ -66,13 +66,10 @@
 )]
 
 // Standard library imports
-// use ...;
 
 // External crate imports
-// use ...;
 
 // Internal imports
-// use ...;
 
 // const NAME: type = ...;
 

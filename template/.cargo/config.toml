@@ -1,5 +1,6 @@
 # [env]
 # IDASDKDIR = "/Users/raptor/idasdk90"
+# RUST_TEST_THREADS = "1"
 
 # [build]
 # rustdocflags = ["--document-private-items"]
