@@ -23,6 +23,11 @@
 //! $ cargo install {{project-name}}
 //! ```
 //!
+//! To install as a library, run the following command in your project directory:
+//! ```sh
+//! $ cargo add {{project-name}}
+//! ```
+//!
 //! ## Compiling
 //! Alternatively, you can build from [source](https://github.com/0xdea/{{project-name}}):
 //! ```sh
