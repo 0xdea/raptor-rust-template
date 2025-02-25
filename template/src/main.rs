@@ -41,7 +41,7 @@ fn main() {
     match {{project-name}}::run(action) {
         Ok(()) => (),
         Err(err) => {
-            eprintln!("[!] Error: {err}");
+            eprintln!("\n[!] Error: {err:#}");
             process::exit(1);
         }
     }
