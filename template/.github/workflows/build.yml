@@ -38,6 +38,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: true
+      - name: test
+        run: cargo test
       - name: build
         run: cargo build
 
@@ -48,5 +50,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: true
+      - name: test
+        run: cargo test
       - name: build
         run: cargo build
