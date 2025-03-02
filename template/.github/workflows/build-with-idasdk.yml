@@ -18,20 +18,20 @@ jobs:
           submodules: true
       - name: prepare IDA SDK
         env:
-          IDASDK90_URL: ${{ secrets.IDASDK90_URL }}
-          IDASDK90_PASSWORD: ${{ secrets.IDASDK90_PASSWORD }}
+          IDASDK_URL: ${{ secrets.IDASDK_URL }}
+          IDASDK_PASSWORD: ${{ secrets.IDASDK_PASSWORD }}
         run: |
-          curl -o "${{ runner.temp }}/idasdk90.zip" -L "$IDASDK90_URL"
-          unzip -d "${{ runner.temp }}" -P "$IDASDK90_PASSWORD" "${{ runner.temp }}/idasdk90.zip"
+          curl -o "${{ runner.temp }}/idasdk.zip" -L "$IDASDK_URL"
+          unzip -d "${{ runner.temp }}" -P "$IDASDK_PASSWORD" "${{ runner.temp }}/idasdk.zip"
       - name: rustfmt
         run: cargo fmt --check
       - name: clippy
         env:
-          IDASDKDIR: "${{ runner.temp }}/idasdk90"
+          IDASDKDIR: "${{ runner.temp }}/idasdk"
         run: cargo clippy -- -D warnings
       - name: build
         env:
-          IDASDKDIR: "${{ runner.temp }}/idasdk90"
+          IDASDKDIR: "${{ runner.temp }}/idasdk"
         run: cargo build
 
   build-macos:
@@ -43,20 +43,14 @@ jobs:
           submodules: true
       - name: prepare IDA SDK
         env:
-          IDASDK90_URL: ${{ secrets.IDASDK90_URL }}
-          IDASDK90_PASSWORD: ${{ secrets.IDASDK90_PASSWORD }}
+          IDASDK_URL: ${{ secrets.IDASDK_URL }}
+          IDASDK_PASSWORD: ${{ secrets.IDASDK_PASSWORD }}
         run: |
-          curl -o "${{ runner.temp }}/idasdk90.zip" -L "$IDASDK90_URL"
-          unzip -d "${{ runner.temp }}" -P "$IDASDK90_PASSWORD" "${{ runner.temp }}/idasdk90.zip"
-      - name: rustfmt
-        run: cargo fmt --check
-      - name: clippy
-        env:
-          IDASDKDIR: "${{ runner.temp }}/idasdk90"
-        run: cargo clippy -- -D warnings
+          curl -o "${{ runner.temp }}/idasdk.zip" -L "$IDASDK_URL"
+          unzip -d "${{ runner.temp }}" -P "$IDASDK_PASSWORD" "${{ runner.temp }}/idasdk.zip"
       - name: build
         env:
-          IDASDKDIR: "${{ runner.temp }}/idasdk90"
+          IDASDKDIR: "${{ runner.temp }}/idasdk"
         run: cargo build
 
   build-windows:
@@ -75,18 +69,12 @@ jobs:
           submodules: true
       - name: prepare IDA SDK
         env:
-          IDASDK90_URL: ${{ secrets.IDASDK90_URL }}
-          IDASDK90_PASSWORD: ${{ secrets.IDASDK90_PASSWORD }}
+          IDASDK_URL: ${{ secrets.IDASDK_URL }}
+          IDASDK_PASSWORD: ${{ secrets.IDASDK_PASSWORD }}
         run: |
-          curl -o "${{ runner.temp }}/idasdk90.zip" -L $env:IDASDK90_URL
-          unzip -d "${{ runner.temp }}" -P $env:IDASDK90_PASSWORD "${{ runner.temp }}/idasdk90.zip"
-      - name: rustfmt
-        run: cargo fmt --check
-      - name: clippy
-        env:
-          IDASDKDIR: "${{ runner.temp }}/idasdk90"
-        run: cargo clippy -- -D warnings
+          curl -o "${{ runner.temp }}/idasdk.zip" -L $env:IDASDK_URL
+          unzip -d "${{ runner.temp }}" -P $env:IDASDK_PASSWORD "${{ runner.temp }}/idasdk.zip"
       - name: build
         env:
-          IDASDKDIR: "${{ runner.temp }}/idasdk90"
+          IDASDKDIR: "${{ runner.temp }}/idasdk"
         run: cargo build
