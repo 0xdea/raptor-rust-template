@@ -77,11 +77,20 @@
 
 // External crate imports
 
-// Internal imports
+// Internal crate imports
+
+// Public re-exports
+
+// Modules and public modules
 
 // const NAME: type = ...;
 
 // static NAME: type = ...;
+
+// Error types
+
+// Structs, enums, impls blocks, impl blocks with constraints, trait impl blocks (std, ext, int)
+// Associated constants, associated functions, constructors, getters/setters, anything else
 
 /// Dispatch to function implementing the selected action
 pub fn run(action: &str) -> anyhow::Result<()> {

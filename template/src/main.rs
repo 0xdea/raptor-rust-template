@@ -5,7 +5,7 @@ use std::process;
 
 // External crate imports
 
-// Internal imports
+// Internal crate imports
 
 // const NAME: type = ...;
 
