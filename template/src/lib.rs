@@ -107,7 +107,11 @@ pub fn run(action: &str) -> anyhow::Result<()> {
 
 /// Short explanation of what the item does.
 ///
-/// Short explanation of return values.
+/// ## Errors
+///
+/// Short explanation of return values and errors with [`link`] where appropriate.
+///
+/// [`link`]: LinkExample
 ///
 /// ## Examples
 ///
