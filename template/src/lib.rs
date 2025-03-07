@@ -105,6 +105,21 @@ pub fn run(action: &str) -> anyhow::Result<()> {
     */
 }
 
+/// Short explanation of what the item does.
+///
+/// Short explanation of return values.
+///
+/// ## Examples
+///
+/// Basic usage:
+/// ```
+/// # fn main() -> anyhow::Result<()> {
+/// todo!();
+/// # Ok(())
+/// # }
+/// ```
+///
+
 // Other functions ...
 
 #[cfg(test)]
