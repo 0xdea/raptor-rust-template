@@ -1,7 +1,8 @@
+//! main.rs
+
 // Standard library imports
-use std::env;
 use std::path::Path;
-use std::process;
+use std::{env, process};
 
 // External crate imports
 
