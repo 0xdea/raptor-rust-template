@@ -20,6 +20,6 @@ https://github.com/Kobzol/cargo-wizard
 
 ## Usage
 ```
-$ cargo install cargo-generate
-$ cargo generate --git https://github.com/0xdea/raptor-rust-template
+cargo install cargo-generate
+cargo generate --git https://github.com/0xdea/raptor-rust-template
 ```
