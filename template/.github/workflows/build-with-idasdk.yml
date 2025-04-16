@@ -23,7 +23,7 @@ jobs:
         with:
           components: rustfmt, clippy
       - name: sccache
-        uses: mozilla-actions/sccache-action@v0.0.7
+        uses: mozilla-actions/sccache-action@v0.0.8
       - name: prepare IDA SDK
         env:
           IDASDK_URL: ${{ secrets.IDASDK_URL }}
@@ -54,7 +54,7 @@ jobs:
         with:
           components: rustfmt, clippy
       - name: sccache
-        uses: mozilla-actions/sccache-action@v0.0.7
+        uses: mozilla-actions/sccache-action@v0.0.8
       - name: prepare IDA SDK
         env:
           IDASDK_URL: ${{ secrets.IDASDK_URL }}
@@ -86,7 +86,7 @@ jobs:
         with:
           components: rustfmt, clippy
       - name: sccache
-        uses: mozilla-actions/sccache-action@v0.0.7
+        uses: mozilla-actions/sccache-action@v0.0.8
       - name: prepare IDA SDK
         env:
           IDASDK_URL: ${{ secrets.IDASDK_URL }}
