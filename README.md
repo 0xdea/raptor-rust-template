@@ -17,6 +17,7 @@ https://cargo-generate.github.io/cargo-generate/
 https://github.com/rust-github/template  
 https://github.com/topics/cargo-generate  
 https://github.com/Kobzol/cargo-wizard  
+https://hnsecurity.it/blog/tag/rust/  
 
 ## Usage
 ```
