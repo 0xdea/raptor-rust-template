@@ -53,6 +53,8 @@ pub fn run(action: &str) -> anyhow::Result<()> {
 /// # }
 /// ```
 ///
+/// More explanations and code examples in case some specific cases have to be explained in detail.
+///
 
 // Other functions ...
 
