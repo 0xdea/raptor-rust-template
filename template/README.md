@@ -81,13 +81,13 @@ TODO
 * Microsoft Windows 11 23H2
 * TODO
 
-## Changelog
-
-* [CHANGELOG.md](CHANGELOG.md)
-
 ## Credits
 
 * TODO
+
+## Changelog
+
+* [CHANGELOG.md](CHANGELOG.md)
 
 ## TODO
 
