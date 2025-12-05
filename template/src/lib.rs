@@ -60,11 +60,15 @@ pub fn run(action: &str) -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    // Test constants
+    const EXPECTED_SUM: i32 = 4;
+    const EXPECTED_RESULT: &str = "Expected result string";
+
     #[test]
     fn it_works() {
         // Arrange
         // Act
         // Assert
-        assert_eq!(2 + 2, 4, "It should work!");
+        assert_eq!(2 + 2, EXPECTED_SUM, "It should work!");
     }
 }
