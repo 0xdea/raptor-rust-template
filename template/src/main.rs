@@ -32,7 +32,7 @@ fn main() {
     let action = match args.len() {
         1 => "default",
         2 => &args[1].clone(),
-        _ => "-",
+        _ => usage(prog),
     };
     if action.starts_with('-') {
         usage(prog);
@@ -49,7 +49,7 @@ fn main() {
 }
 
 /// Print usage information and exit
-fn usage(prog: &str) {
+fn usage(prog: &str) -> ! {
     println!("Usage:");
     println!("{prog} TODO");
     println!("\nExamples:");
