@@ -1,8 +1,9 @@
 //! main.rs
 
 // Standard library imports
-use std::path::Path;
-use std::{env, process};
+use std::env;
+use std::ffi::{OsStr, OsString};
+use std::process::ExitCode;
 
 // External crate imports
 
@@ -15,46 +16,46 @@ use std::{env, process};
 const PROGRAM: &str = env!("CARGO_PKG_NAME");
 const VERSION: &str = env!("CARGO_PKG_VERSION");
 
-fn main() {
-    println!("{PROGRAM} {VERSION} - {{short-desc}}");
-    println!("Copyright (c) {{year}} Marco Ivaldi <raptor@0xdeadbeef.info>");
-    println!();
+fn main() -> ExitCode {
+    eprintln!("{PROGRAM} {VERSION} - {{short-desc}}");
+    eprintln!("Copyright (c) {{year}} Marco Ivaldi <raptor@0xdeadbeef.info>");
+    eprintln!();
 
     // Parse command line arguments
-    let args = env::args().collect::<Vec<_>>();
+    let mut args = env::args_os();
+    let argv0 = args.next().unwrap_or_else(|| OsString::from(PROGRAM));
+    let is_help = |a: &OsStr| a == OsStr::new("-h") || a == OsStr::new("--help");
 
-    let prog = Path::new(&args[0])
+    let prog = Path::new(&argv0)
         .file_name()
-        .unwrap()
-        .to_str()
+        .and_then(|s| s.to_str())
         .unwrap_or(PROGRAM);
 
-    let action = match args.len() {
-        1 => "default",
-        2 => &args[1].clone(),
-        _ => usage(prog),
+    let action = match (args.next(), args.next()) {
+        (None, _) => OsString::from("default"),
+        (Some(arg), None) if !is_help(&arg) => arg,
+        _ => return usage(prog),
     };
-    if action.starts_with('-') {
-        usage(prog);
-    }
 
     // Let's do it
-    match {{project-name}}::run(action) {
-        Ok(()) => (),
+    match { { project - name } }
+    ::run(action)
+    {
+        Ok(_) => ExitCode::SUCCESS,
         Err(err) => {
-            eprintln!("[!] Error: {err:#}");
-            process::exit(1);
-        }
+        eprintln!("[!] Error: {err:#}");
+        ExitCode::FAILURE
+    }
     }
 }
 
 /// Print usage information and exit
-fn usage(prog: &str) -> ! {
-    println!("Usage:");
-    println!("{prog} TODO");
-    println!("\nExamples:");
-    println!("{prog}");
-    println!("{prog} TODO");
+fn usage(prog: &str) -> ExitCode {
+    eprintln!("Usage:");
+    eprintln!("{prog} TODO");
+    eprintln!("\nExamples:");
+    eprintln!("{prog}");
+    eprintln!("{prog} TODO");
 
-    process::exit(0);
+    ExitCode::FAILURE
 }
