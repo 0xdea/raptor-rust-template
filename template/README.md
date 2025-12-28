@@ -74,8 +74,9 @@ TODO:
 TODO
 ```
 
-## Tested on
+## Compatibility
 
+Tested on:
 * Apple macOS Sequoia 15.2
 * Ubuntu Linux 24.04.2 LTS
 * Microsoft Windows 11 23H2
