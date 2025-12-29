@@ -3,6 +3,7 @@
 [![](https://img.shields.io/github/stars/0xdea/{{project-name}}.svg?style=flat&color=yellow)](https://github.com/0xdea/{{project-name}})
 [![](https://img.shields.io/crates/v/{{project-name}}?style=flat&color=green)](https://crates.io/crates/{{project-name}})
 [![](https://img.shields.io/crates/d/{{project-name}}?style=flat&color=red)](https://crates.io/crates/{{project-name}})
+[![](https://img.shields.io/badge/todo-0.1.1-violet)](https://todo.com/)
 [![](https://img.shields.io/badge/twitter-%400xdea-blue.svg)](https://twitter.com/0xdea)
 [![](https://img.shields.io/badge/mastodon-%40raptor-purple.svg)](https://infosec.exchange/@raptor)
 [![build](https://github.com/0xdea/{{project-name}}/actions/workflows/build.yml/badge.svg)](https://github.com/0xdea/{{project-name}}/actions/workflows/build.yml)
