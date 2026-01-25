@@ -15,10 +15,11 @@ use std::process::ExitCode;
 
 const PROGRAM: &str = env!("CARGO_PKG_NAME");
 const VERSION: &str = env!("CARGO_PKG_VERSION");
+const AUTHORS: &str = env!("CARGO_PKG_AUTHORS");
 
 fn main() -> ExitCode {
     eprintln!("{PROGRAM} {VERSION} - {{short-desc}}");
-    eprintln!("Copyright (c) {{year}} Marco Ivaldi <raptor@0xdeadbeef.info>");
+    eprintln!("Copyright (c) {{year}} {AUTHORS}");
     eprintln!();
 
     // Parse command line arguments
