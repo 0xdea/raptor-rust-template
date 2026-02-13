@@ -46,8 +46,9 @@ missing_docs = { level = "warn" }
 [profile.release]
 # see https://github.com/johnthagen/min-sized-rust
 strip = true
-# opt-level = "z"
 lto = true
+# opt-level = 3
+# opt-level = "z"
 # codegen-units = 1
 panic = "abort"
 
