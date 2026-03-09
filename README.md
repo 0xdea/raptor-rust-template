@@ -15,7 +15,7 @@ with [cargo-generate](https://crates.io/crates/cargo-generate).
 
 ## Usage
 
-```
+```sh
 cargo install cargo-generate
 cargo generate --git https://github.com/0xdea/raptor-rust-template
 ```
