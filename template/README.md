@@ -19,15 +19,15 @@
 
 ## Features
 
-* TODO
+- TODO
 
 ## Blog post
 
-* TODO
+- TODO
 
 ## See also
 
-* TODO
+- TODO
 
 ## Installing
 
@@ -78,19 +78,20 @@ TODO
 ## Compatibility
 
 Tested on:
-* Apple macOS Sequoia 15.2
-* Ubuntu Linux 24.04.2 LTS
-* Microsoft Windows 11 23H2
-* TODO
+
+- Apple macOS Sequoia 15.2
+- Ubuntu Linux 24.04.2 LTS
+- Microsoft Windows 11 23H2
+- TODO
 
 ## Credits
 
-* TODO
+- TODO
 
 ## Changelog
 
-* [CHANGELOG.md](CHANGELOG.md)
+- [CHANGELOG.md](CHANGELOG.md)
 
 ## TODO
 
-* TODO
+- TODO

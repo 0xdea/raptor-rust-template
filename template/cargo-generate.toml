@@ -17,4 +17,4 @@ prompt = "Long description"
 default = "TODO"
 
 [conditional.'crate_type == "lib"']
-ignore = [ "src/main.rs" ]
+ignore = ["src/main.rs"]
