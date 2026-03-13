@@ -2,4 +2,5 @@
 .cargo-ok
 .DS_Store
 .idea
+.zed
 {% if crate_type == "lib" %}Cargo.lock{% endif %}
