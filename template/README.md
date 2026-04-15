@@ -90,7 +90,7 @@ Tested on:
 
 ## Changelog
 
-- [CHANGELOG.md](CHANGELOG.md)
+- [CHANGELOG.md](https://github.com/0xdea/{{project-name}}/blob/master/CHANGELOG.md)
 
 ## TODO
 
