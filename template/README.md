@@ -79,8 +79,8 @@ TODO
 
 Tested on:
 
-- Apple macOS Sequoia 15.2
-- Ubuntu Linux 24.04.2 LTS
+- Apple macOS Tahoe 26.4.1
+- Ubuntu Linux 24.04.4 LTS
 - Microsoft Windows 11 23H2
 - TODO
 
