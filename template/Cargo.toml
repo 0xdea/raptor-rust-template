@@ -10,7 +10,13 @@ repository = "https://github.com/0xdea/{{project-name}}"
 license = "MIT"
 keywords = ["TODO", "windows", "redteaming", "exploitation"]
 # see https://crates.io/categories
-categories = ["command-line-utilities"]
+categories = [
+  "security",
+  "development-tools",
+  "text-editors",
+  "artificial-intelligence",
+  "command-line-utilities",
+]
 exclude = [
   ".cargo/*",
   ".github/*",
