@@ -3,26 +3,26 @@
     html_logo_url = "https://raw.githubusercontent.com/0xdea/{{project-name}}/master/.img/logo.png"
 )]
 
-// Standard library imports
+// Standard library imports.
 
-// External crate imports
+// External crate imports.
 
-// Internal crate imports
+// Internal crate imports.
 
-// Public re-exports
+// Public re-exports.
 
-// Modules and public modules
+// Modules and public modules.
 
 // const NAME: type = ...;
 
 // static NAME: type = ...;
 
-// Error types
+// Error types.
 
 // Structs, enums, impls blocks, impl blocks with constraints, trait impl blocks (std, ext, int)
-// Associated constants, associated functions, constructors, getters/setters, anything else
+// Associated constants, associated functions, constructors, getters/setters, anything else.
 
-/// Dispatch to function implementing the selected action
+/// Dispatch to function implementing the selected action.
 pub fn run(action: &str) -> anyhow::Result<()> {
     todo!();
     /*
@@ -62,15 +62,15 @@ pub fn run(action: &str) -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    // Test constants
+    // Test constants.
     const EXPECTED_SUM: i32 = 4;
     const EXPECTED_RESULT: &str = "Expected result string";
 
     #[test]
     fn it_works() {
-        // Arrange
-        // Act
-        // Assert
+        // Arrange.
+        // Act.
+        // Assert.
         assert_eq!(2 + 2, EXPECTED_SUM, "It should work!");
     }
 }

@@ -1,23 +1,23 @@
 //! main.rs
 
-// Standard library imports
+// Standard library imports.
 use std::env;
 use std::ffi::{OsStr, OsString};
 use std::process::ExitCode;
 
-// External crate imports
+// External crate imports.
 
-// Internal crate imports
+// Internal crate imports.
 
 // const NAME: type = ...;
 
 // static NAME: type = ...;
 
-/// Package name
+/// Package name.
 const PROGRAM: &str = env!("CARGO_PKG_NAME");
-/// Package version
+/// Package version.
 const VERSION: &str = env!("CARGO_PKG_VERSION");
-/// Package authors
+/// Package authors.
 const AUTHORS: &str = env!("CARGO_PKG_AUTHORS");
 
 fn main() -> ExitCode {
@@ -25,7 +25,7 @@ fn main() -> ExitCode {
     eprintln!("Copyright (c) {{year}} {AUTHORS}");
     eprintln!();
 
-    // Parse command line arguments
+    // Parse command line arguments.
     let mut args = env::args_os();
     let argv0 = args.next().unwrap_or_else(|| OsString::from(PROGRAM));
     let is_help = |a: &OsStr| a == OsStr::new("-h") || a == OsStr::new("--help");
@@ -41,7 +41,7 @@ fn main() -> ExitCode {
         _ => return usage(prog),
     };
 
-    // Let's do it
+    // Let's do it.
     match { { project - name } }
     ::run(action)
     {
@@ -53,7 +53,7 @@ fn main() -> ExitCode {
     }
 }
 
-/// Print usage information and exit
+/// Print usage information and exit.
 fn usage(prog: &str) -> ExitCode {
     eprintln!("Usage:");
     eprintln!("{prog} TODO");
