@@ -53,6 +53,23 @@ cd {{project-name}}
 cargo build --release
 ```
 
+## Configuration
+
+> [!NOTE]
+> Useful information
+
+> [!TIP]
+> Helpful advice
+
+> [!IMPORTANT]
+> Key information
+
+> [!WARNING]
+> Urgent concern
+
+> [!CAUTION]
+> Potential risk or danger
+
 ## Usage
 
 Run {{project-name}} as follows:
