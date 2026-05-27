@@ -6,6 +6,8 @@ permissions:
 on:
   push:
     branches: [master]
+  pull_request:
+    branches: [master]
   workflow_dispatch:
 
 concurrency:
@@ -21,6 +23,7 @@ jobs:
   build-linux-plus-checks:
     name: build-linux-plus-checks
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -54,6 +57,7 @@ jobs:
   build-macos:
     name: build-macos
     runs-on: macOS-latest
+    timeout-minutes: 30
     steps:
       - name: checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -81,6 +85,7 @@ jobs:
   build-windows:
     name: build-windows
     runs-on: windows-latest
+    timeout-minutes: 30
     steps:
       - name: install clang/llvm
         uses: KyleMayes/install-llvm-action@e0a8dc9cb8a22e8a7696e8a91a4e9581bec13181
