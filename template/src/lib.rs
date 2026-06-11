@@ -22,7 +22,7 @@
 // Structs, enums, impls blocks, impl blocks with constraints, trait impl blocks (std, ext, int)
 // Associated constants, associated functions, constructors, getters/setters, anything else.
 
-/// Dispatch to function implementing the selected action.
+/// Dispatches to function implementing the selected action.
 pub fn run(action: &str) -> anyhow::Result<()> {
     todo!();
     /*
