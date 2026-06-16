@@ -37,13 +37,15 @@ pub fn run(action: &str) -> anyhow::Result<()> {
 
 /// Short explanation of what the item does.
 ///
-/// ## Errors
+/// Short explanation of return values with [`link1`] or [`link2`](Link::Example2) where appropriate.
 ///
-/// Short explanation of return values and errors with [`link`] where appropriate.
+/// [`link1`]: Link::Example1
 ///
-/// [`link`]: LinkExample
+/// # Errors
 ///
-/// ## Examples
+/// Short explanation of errors and their possible causes.
+///
+/// # Examples
 ///
 /// Basic usage:
 /// ```
