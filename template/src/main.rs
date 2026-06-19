@@ -1,4 +1,4 @@
-//! main.rs
+//! main.rs.
 
 // Standard library imports.
 use std::env;
