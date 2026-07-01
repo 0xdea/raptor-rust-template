@@ -1,5 +1,6 @@
 [template]
 cargo_generate_version = ">=0.10.0"
+exclude = ["*.png"]
 
 [hooks]
 init = ["init-script.rhai"]
