@@ -50,7 +50,6 @@ fn main() -> ExitCode {
         eprintln!("[!] Error: {err:#}");
         ExitCode::FAILURE
     }
-    }
 }
 
 /// Prints usage information and exits.
