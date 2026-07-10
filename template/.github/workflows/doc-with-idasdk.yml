@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}
+  group: {% raw %}${{ github.workflow }}{% endraw %}
   cancel-in-progress: false
 
 env:
@@ -30,14 +30,14 @@ jobs:
           submodules: true
       - name: prepare IDA SDK
         env:
-          IDASDK_URL: ${{ secrets.IDASDK_URL }}
-          IDASDK_PASSWORD: ${{ secrets.IDASDK_PASSWORD }}
+          IDASDK_URL: {% raw %}${{ secrets.IDASDK_URL }}{% endraw %}
+          IDASDK_PASSWORD: {% raw %}${{ secrets.IDASDK_PASSWORD }}{% endraw %}
         run: |
-          curl -o "${{ runner.temp }}/idasdk.zip" -L "$IDASDK_URL"
-          unzip -d "${{ runner.temp }}" -P "$IDASDK_PASSWORD" "${{ runner.temp }}/idasdk.zip"
+          curl -o "{% raw %}${{ runner.temp }}{% endraw %}/idasdk.zip" -L "$IDASDK_URL"
+          unzip -d "{% raw %}${{ runner.temp }}{% endraw %}" -P "$IDASDK_PASSWORD" "{% raw %}${{ runner.temp }}{% endraw %}/idasdk.zip"
       - name: generate documentation
         env:
-          IDASDKDIR: "${{ runner.temp }}/idasdk"
+          IDASDKDIR: "{% raw %}${{ runner.temp }}{% endraw %}/idasdk"
         run: cargo doc
       - name: git configuration
         run: |

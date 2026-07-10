@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}
+  group: {% raw %}${{ github.workflow }}{% endraw %}
   cancel-in-progress: false
 
 env:

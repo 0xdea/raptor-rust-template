@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}
+  group: {% raw %}${{ github.workflow }}{% endraw %}
   cancel-in-progress: false
 
 env:
@@ -18,8 +18,8 @@ env:
 
 jobs:
   build-all:
-    name: build ${{ matrix.target }}
-    runs-on: ${{ matrix.os }}
+    name: build {% raw %}${{ matrix.target }}{% endraw %}
+    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
     timeout-minutes: 45
     strategy:
       fail-fast: false
@@ -58,12 +58,12 @@ jobs:
       - name: toolchain
         uses: actions-rust-lang/setup-rust-toolchain@150fca883cd4034361b621bd4e6a9d34e5143606 # v1.15.4
         with:
-          target: ${{ matrix.target }}
+          target: {% raw %}${{ matrix.target }}{% endraw %}
           cache: false
       - name: build
         if: matrix.os != 'ubuntu-latest'
         env:
-          TARGET: ${{ matrix.target }}
+          TARGET: {% raw %}${{ matrix.target }}{% endraw %}
         shell: bash
         run: |
           cargo build --release --locked --manifest-path lsp/Cargo.toml --target "$TARGET"
@@ -75,14 +75,14 @@ jobs:
       - name: build-linux
         if: matrix.os == 'ubuntu-latest'
         env:
-          TARGET: ${{ matrix.target }}
+          TARGET: {% raw %}${{ matrix.target }}{% endraw %}
         shell: bash
         run: |
           cross build --release --locked --manifest-path lsp/Cargo.toml --target "$TARGET"
       - name: package
         env:
-          TARGET: ${{ matrix.target }}
-          NAME: ${{ matrix.name }}
+          TARGET: {% raw %}${{ matrix.target }}{% endraw %}
+          NAME: {% raw %}${{ matrix.name }}{% endraw %}
         shell: bash
         run: |
           cd "target/$TARGET/release"
@@ -94,8 +94,8 @@ jobs:
       - name: upload
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: ${{ matrix.name }}
-          path: ${{ matrix.name }}
+          name: {% raw %}${{ matrix.name }}{% endraw %}
+          path: {% raw %}${{ matrix.name }}{% endraw %}
 
   release:
     name: release
