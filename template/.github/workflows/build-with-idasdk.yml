@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: {% raw %}${{ github.workflow }}{% endraw %}-{% raw %}${{ github.ref }}{% endraw %}
   cancel-in-progress: true
 
 env:
@@ -38,20 +38,20 @@ jobs:
         uses: mozilla-actions/sccache-action@9e7fa8a12102821edf02ca5dbea1acd0f89a2696 # v0.0.10
       - name: prepare IDA SDK
         env:
-          IDASDK_URL: ${{ secrets.IDASDK_URL }}
-          IDASDK_PASSWORD: ${{ secrets.IDASDK_PASSWORD }}
+          IDASDK_URL: {% raw %}${{ secrets.IDASDK_URL }}{% endraw %}
+          IDASDK_PASSWORD: {% raw %}${{ secrets.IDASDK_PASSWORD }}{% endraw %}
         run: |
-          curl -o "${{ runner.temp }}/idasdk.zip" -L "$IDASDK_URL"
-          unzip -d "${{ runner.temp }}" -P "$IDASDK_PASSWORD" "${{ runner.temp }}/idasdk.zip"
+          curl -o "{% raw %}${{ runner.temp }}{% endraw %}/idasdk.zip" -L "$IDASDK_URL"
+          unzip -d "{% raw %}${{ runner.temp }}{% endraw %}" -P "$IDASDK_PASSWORD" "{% raw %}${{ runner.temp }}{% endraw %}/idasdk.zip"
       - name: rustfmt
         run: cargo fmt --all --check
       - name: clippy
         env:
-          IDASDKDIR: "${{ runner.temp }}/idasdk"
+          IDASDKDIR: "{% raw %}${{ runner.temp }}{% endraw %}/idasdk"
         run: cargo clippy --all-targets -- -D warnings
       - name: build
         env:
-          IDASDKDIR: "${{ runner.temp }}/idasdk"
+          IDASDKDIR: "{% raw %}${{ runner.temp }}{% endraw %}/idasdk"
         run: cargo build
 
   build-macos:
@@ -72,14 +72,14 @@ jobs:
         uses: mozilla-actions/sccache-action@9e7fa8a12102821edf02ca5dbea1acd0f89a2696 # v0.0.10
       - name: prepare IDA SDK
         env:
-          IDASDK_URL: ${{ secrets.IDASDK_URL }}
-          IDASDK_PASSWORD: ${{ secrets.IDASDK_PASSWORD }}
+          IDASDK_URL: {% raw %}${{ secrets.IDASDK_URL }}{% endraw %}
+          IDASDK_PASSWORD: {% raw %}${{ secrets.IDASDK_PASSWORD }}{% endraw %}
         run: |
-          curl -o "${{ runner.temp }}/idasdk.zip" -L "$IDASDK_URL"
-          unzip -d "${{ runner.temp }}" -P "$IDASDK_PASSWORD" "${{ runner.temp }}/idasdk.zip"
+          curl -o "{% raw %}${{ runner.temp }}{% endraw %}/idasdk.zip" -L "$IDASDK_URL"
+          unzip -d "{% raw %}${{ runner.temp }}{% endraw %}" -P "$IDASDK_PASSWORD" "{% raw %}${{ runner.temp }}{% endraw %}/idasdk.zip"
       - name: build
         env:
-          IDASDKDIR: "${{ runner.temp }}/idasdk"
+          IDASDKDIR: "{% raw %}${{ runner.temp }}{% endraw %}/idasdk"
         run: cargo build
 
   build-windows:
@@ -91,7 +91,7 @@ jobs:
         uses: KyleMayes/install-llvm-action@e0a8dc9cb8a22e8a7696e8a91a4e9581bec13181
         with:
           version: "18.1.8"
-          directory: "${{ runner.temp }}/llvm-18"
+          directory: "{% raw %}${{ runner.temp }}{% endraw %}/llvm-18"
       - name: configure clang/llvm environment
         run: echo "LIBCLANG_PATH=$((gcm clang).source -replace "clang.exe")" >> $env:GITHUB_ENV
       - name: checkout
@@ -107,12 +107,12 @@ jobs:
         uses: mozilla-actions/sccache-action@9e7fa8a12102821edf02ca5dbea1acd0f89a2696 # v0.0.10
       - name: prepare IDA SDK
         env:
-          IDASDK_URL: ${{ secrets.IDASDK_URL }}
-          IDASDK_PASSWORD: ${{ secrets.IDASDK_PASSWORD }}
+          IDASDK_URL: {% raw %}${{ secrets.IDASDK_URL }}{% endraw %}
+          IDASDK_PASSWORD: {% raw %}${{ secrets.IDASDK_PASSWORD }}{% endraw %}
         run: |
-          curl -o "${{ runner.temp }}/idasdk.zip" -L $env:IDASDK_URL
-          unzip -d "${{ runner.temp }}" -P $env:IDASDK_PASSWORD "${{ runner.temp }}/idasdk.zip"
+          curl -o "{% raw %}${{ runner.temp }}{% endraw %}/idasdk.zip" -L $env:IDASDK_URL
+          unzip -d "{% raw %}${{ runner.temp }}{% endraw %}" -P $env:IDASDK_PASSWORD "{% raw %}${{ runner.temp }}{% endraw %}/idasdk.zip"
       - name: build
         env:
-          IDASDKDIR: "${{ runner.temp }}/idasdk"
+          IDASDKDIR: "{% raw %}${{ runner.temp }}{% endraw %}/idasdk"
         run: cargo build
