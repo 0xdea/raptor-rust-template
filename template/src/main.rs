@@ -3,8 +3,8 @@
 // Standard library imports.
 use std::env;
 use std::ffi::{OsStr, OsString};
-use std::process::ExitCode;
 use std::path::Path;
+use std::process::ExitCode;
 
 // External crate imports.
 
@@ -43,12 +43,12 @@ fn main() -> ExitCode {
     };
 
     // Let's do it.
-    match {{project-name}}::run(action)
-    {
+    match {{project-name}}::run(action) {
         Ok(_) => ExitCode::SUCCESS,
         Err(err) => {
-        eprintln!("[!] Error: {err:#}");
-        ExitCode::FAILURE
+            eprintln!("[!] Error: {err:#}");
+            ExitCode::FAILURE
+        }
     }
 }
 
