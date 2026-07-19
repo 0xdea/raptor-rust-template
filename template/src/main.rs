@@ -22,6 +22,33 @@ const VERSION: &str = env!("CARGO_PKG_VERSION");
 const AUTHORS: &str = env!("CARGO_PKG_AUTHORS");
 
 fn main() -> ExitCode {
+    /*
+    // Handle verbose output with a macro.
+    let verbose = env::args_os().nth(1).is_some();
+    macro_rules! vprintln {
+        ($($arg:tt)*) => {
+            if verbose {
+                eprintln!($($arg)*);
+            }
+        };
+    }
+
+    vprintln!("{PROGRAM} {VERSION} - {{short-desc}}");
+    vprintln!("Copyright (c) {{year}} {AUTHORS}");
+    vprintln!();
+
+    match {{project-name}}::run() {
+        Ok(()) => {
+            {{project-name}}::clear_terminal(LINES);
+            ExitCode::SUCCESS
+        }
+        Err(err) => {
+            vprintln!("[!] Error: {err:#}");
+            ExitCode::FAILURE
+        }
+    }
+    */
+
     eprintln!("{PROGRAM} {VERSION} - {{short-desc}}");
     eprintln!("Copyright (c) {{year}} {AUTHORS}");
     eprintln!();
