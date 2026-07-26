@@ -1,6 +1,10 @@
-/target
-.cargo-ok
-.DS_Store
-.idea
-.zed
+# Build artifacts
+/target/
 {% if crate_type == "lib" %}Cargo.lock{% endif %}
+
+# OS
+.DS_Store
+
+# Editors
+.idea/
+.zed/
