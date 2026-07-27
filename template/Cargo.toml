@@ -60,6 +60,7 @@ workspace = true
 
 [workspace.lints.rust]
 missing_docs = { level = "warn" }
+# linker_messages = "allow"
 
 # [workspace.lints.rustdoc]
 # currently unstable, see https://github.com/rust-lang/rust/issues/101730
