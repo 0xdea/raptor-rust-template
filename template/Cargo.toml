@@ -33,6 +33,11 @@ anyhow = "1.0"
 
 # [dev-dependencies]
 
+# [patch.crates-io]
+# idalib = { git = "https://github.com/0xdea/idalib", branch = "fix/idasdk-linkage" }
+# idalib-build = { git = "https://github.com/0xdea/idalib", branch = "fix/idasdk-linkage" }
+# idalib-sys = { git = "https://github.com/0xdea/idalib", branch = "fix/idasdk-linkage" }
+
 # [[test]]
 # name = "tests"
 # path = "tests/main.rs"
