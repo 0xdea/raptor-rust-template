@@ -21,7 +21,7 @@
 
 - TODO
 
-## Blog post
+## Articles
 
 - TODO
 
