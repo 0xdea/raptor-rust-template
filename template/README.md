@@ -21,7 +21,7 @@
 
 - TODO
 
-## Articles
+## Article
 
 - TODO
 
