@@ -34,7 +34,7 @@
 The easiest way to get the latest release is via [crates.io](https://crates.io/crates/{{project-name}}):
 
 ```sh
-cargo install {{project-name}}
+cargo install {{project-name}} --locked
 ```
 
 To install as a library, run the following command in your project directory:
@@ -50,7 +50,7 @@ Alternatively, you can build from [source](https://github.com/0xdea/{{project-na
 ```sh
 git clone https://github.com/0xdea/{{project-name}}
 cd {{project-name}}
-cargo build --release
+cargo build --release --locked
 ```
 
 ## Configuration
