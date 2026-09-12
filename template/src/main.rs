@@ -42,8 +42,8 @@ fn main() -> ExitCode {
             {{project-name}}::clear_terminal(LINES);
             ExitCode::SUCCESS
         }
-        Err(err) => {
-            vprintln!("[!] Error: {err:#}");
+        Err(e) => {
+            vprintln!("[!] Error: {e:#}");
             ExitCode::FAILURE
         }
     }
@@ -72,8 +72,8 @@ fn main() -> ExitCode {
     // Let's do it.
     match {{project-name}}::run(action) {
         Ok(_) => ExitCode::SUCCESS,
-        Err(err) => {
-            eprintln!("[!] Error: {err:#}");
+        Err(e) => {
+            eprintln!("[!] Error: {e:#}");
             ExitCode::FAILURE
         }
     }
