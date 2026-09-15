@@ -18,6 +18,8 @@ use std::process::ExitCode;
 const PROGRAM: &str = env!("CARGO_PKG_NAME");
 /// Package version.
 const VERSION: &str = env!("CARGO_PKG_VERSION");
+/// Package description.
+const DESCRIPTION: &str = env!("CARGO_PKG_DESCRIPTION");
 /// Package authors.
 const AUTHORS: &str = env!("CARGO_PKG_AUTHORS");
 
@@ -42,21 +44,21 @@ fn main() -> ExitCode {
             {{project-name}}::clear_terminal(LINES);
             ExitCode::SUCCESS
         }
-        Err(e) => {
-            vprintln!("[!] Error: {e:#}");
+        Err(error) => {
+            vprintln!("[!] Error: {error:#}");
             ExitCode::FAILURE
         }
     }
     */
 
-    eprintln!("{PROGRAM} {VERSION} - {{short-desc}}");
+    eprintln!("{PROGRAM} {VERSION} - {DESCRIPTION}");
     eprintln!("Copyright (c) {{year}} {AUTHORS}");
     eprintln!();
 
     // Parse command line arguments.
     let mut args = env::args_os();
     let argv0 = args.next().unwrap_or_else(|| OsString::from(PROGRAM));
-    let is_help = |a: &OsStr| a == OsStr::new("-h") || a == OsStr::new("--help");
+    let is_help = |arg: &OsStr| arg == OsStr::new("-h") || arg == OsStr::new("--help");
 
     let prog = Path::new(&argv0)
         .file_name()
@@ -72,8 +74,8 @@ fn main() -> ExitCode {
     // Let's do it.
     match {{project-name}}::run(action) {
         Ok(_) => ExitCode::SUCCESS,
-        Err(e) => {
-            eprintln!("[!] Error: {e:#}");
+        Err(error) => {
+            eprintln!("[!] Error: {error:#}");
             ExitCode::FAILURE
         }
     }
