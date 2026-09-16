@@ -19,6 +19,8 @@
 
 // static NAME: type = ...;
 
+// type Name = u32;
+
 // Error types.
 
 // Structs, enums, impls blocks, impl blocks with constraints, trait impl blocks (std, ext, int)
