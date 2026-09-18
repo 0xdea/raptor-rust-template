@@ -14,8 +14,10 @@ use std::process::ExitCode;
 
 // static NAME: type = ...;
 
-/// Package name.
-const PROGRAM: &str = env!("CARGO_PKG_NAME");
+// /// Package name.
+// const PROGRAM: &str = env!("CARGO_PKG_NAME");
+/// Binary name.
+const PROGRAM: &str = env!("CARGO_BIN_NAME");
 /// Package version.
 const VERSION: &str = env!("CARGO_PKG_VERSION");
 /// Package description.
