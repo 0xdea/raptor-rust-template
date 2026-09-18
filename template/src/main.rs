@@ -58,6 +58,8 @@ fn main() -> ExitCode {
     eprintln!();
 
     // Parse command line arguments.
+    //
+    // See https://github.com/0xdea/singsing-rs for an example with clap.
     let mut args = env::args_os();
     let argv0 = args.next().unwrap_or_else(|| OsString::from(PROGRAM));
     let is_help = |arg: &OsStr| arg == OsStr::new("-h") || arg == OsStr::new("--help");

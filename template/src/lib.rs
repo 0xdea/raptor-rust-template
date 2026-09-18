@@ -27,6 +27,8 @@
 // Associated constants, associated functions, constructors, getters/setters, anything else.
 
 /// Dispatches to function implementing the selected action.
+///
+/// This could also be moved to main.rs and made private.
 pub fn run(action: &str) -> anyhow::Result<()> {
     todo!();
     /*
