@@ -66,7 +66,7 @@ fn main() -> ExitCode {
 
     let prog = Path::new(&argv0)
         .file_name()
-        .and_then(|s| s.to_str())
+        .and_then(OsStr::to_str)
         .unwrap_or(PROGRAM);
 
     let action = match (args.next(), args.next()) {
