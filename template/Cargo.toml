@@ -1,3 +1,7 @@
+# [workspace]
+# members = ["crates/*"]
+# resolver = "3"
+
 [package]
 name = "{{project-name}}"
 version = "0.1.0"
