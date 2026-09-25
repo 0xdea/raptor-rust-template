@@ -62,7 +62,7 @@ fn main() -> ExitCode {
     // See https://github.com/0xdea/singsing-rs for an example with clap.
     let mut args = env::args_os();
     let argv0 = args.next().unwrap_or_else(|| OsString::from(PROGRAM));
-    let is_help = |arg: &OsStr| arg == OsStr::new("-h") || arg == OsStr::new("--help");
+    let is_help = |arg: &OsStr| matches!(arg.to_str(), Some("-h" | "--help"));
 
     let prog = Path::new(&argv0)
         .file_name()
