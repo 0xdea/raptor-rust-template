@@ -11,9 +11,11 @@
 
 // Internal crate imports.
 
-// Public re-exports.
-
 // Modules and public modules.
+
+// Public re-exports (next to the modules they expose).
+
+// Macros (their scope is textual, so they come before any code that uses them).
 
 // const NAME: type = ...;
 
@@ -23,8 +25,14 @@
 
 // Error types.
 
-// Structs, enums, impls blocks, impl blocks with constraints, trait impl blocks (std, ext, int)
-// Associated constants, associated functions, constructors, getters/setters, anything else.
+// Traits (before the types that implement them).
+
+// Structs and enums, each followed by its impl blocks: inherent impl blocks,
+// impl blocks with constraints, trait impl blocks (std, ext, int). Inside impl
+// blocks: associated constants, constructors, other associated functions,
+// getters/setters, anything else.
+
+// Free functions, public ones first.
 
 /// Dispatches to function implementing the selected action.
 ///
@@ -43,7 +51,8 @@ pub fn run(action: &str) -> anyhow::Result<()> {
 
 /// Short explanation of what the item does.
 ///
-/// Short explanation of return values with [`link1`] or [`link2`](Link::Example2) where appropriate.
+/// Short explanation of return values with [`link1`] or
+/// [`link2`](Link::Example2) where appropriate.
 ///
 /// [`link1`]: Link::Example1
 ///
@@ -61,7 +70,8 @@ pub fn run(action: &str) -> anyhow::Result<()> {
 /// # }
 /// ```
 ///
-/// More explanations and code examples in case some specific cases have to be explained in detail.
+/// More explanations and code examples in case some specific cases have to be
+/// explained in detail.
 ///
 
 // Other functions ...
