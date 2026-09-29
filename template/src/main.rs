@@ -78,14 +78,14 @@ fn main() -> ExitCode {
     // Let's do it.
     match {{project-name}}::run(action) {
         Ok(_) => ExitCode::SUCCESS,
-        Err(error) => {
-            eprintln!("[!] Error: {error:#}");
+        Err(err) => {
+            eprintln!("[!] Error: {err:#}");
             ExitCode::FAILURE
         }
     }
 }
 
-/// Prints usage information and exits.
+/// Prints usage information and returns a failure exit code.
 fn usage(prog: &str) -> ExitCode {
     eprintln!("Usage:");
     eprintln!("{prog} TODO");
