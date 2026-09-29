@@ -27,4 +27,5 @@ cargo generate --git https://github.com/0xdea/raptor-rust-template
 - <https://github.com/rust-github/template>
 - <https://github.com/topics/cargo-generate>
 - <https://github.com/Kobzol/cargo-wizard>
+- <https://github.com/0xdea/dotfiles/tree/main/claude/.claude/skills/rust-style>
 - <https://hnsecurity.it/blog/tag/rust/>
