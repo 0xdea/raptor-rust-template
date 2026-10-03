@@ -44,9 +44,9 @@ jobs:
       - name: rustfmt
         run: cargo fmt --all --check
       - name: build
-        run: cargo build --locked
+        run: cargo build --workspace --locked
       - name: clippy
-        run: cargo clippy --all-targets --locked -- -D warnings
+        run: cargo clippy --workspace --all-targets --locked -- -D warnings
       - name: install cargo-audit
         uses: taiki-e/install-action@7572810d7dd469b651bb7793945692cf78da5dd7 # v2.85.0
         with:
@@ -56,9 +56,9 @@ jobs:
       - name: doc
         env:
           RUSTDOCFLAGS: -D warnings
-        run: cargo doc --no-deps --locked
+        run: cargo doc --workspace --no-deps --locked
       - name: test
-        run: cargo test --locked
+        run: cargo test --workspace --locked
       # - name: nextest
       #   uses: taiki-e/install-action@cargo-nextest
       #   run: cargo nextest run --locked
@@ -80,9 +80,9 @@ jobs:
       - name: sccache
         uses: mozilla-actions/sccache-action@9e7fa8a12102821edf02ca5dbea1acd0f89a2696 # v0.0.10
       - name: build
-        run: cargo build --locked
+        run: cargo build --workspace --locked
       - name: test
-        run: cargo test --locked
+        run: cargo test --workspace --locked
       # - name: nextest
       #   uses: taiki-e/install-action@cargo-nextest
       #   run: cargo nextest run --locked
@@ -102,9 +102,9 @@ jobs:
       - name: sccache
         uses: mozilla-actions/sccache-action@9e7fa8a12102821edf02ca5dbea1acd0f89a2696 # v0.0.10
       - name: build
-        run: cargo build --locked
+        run: cargo build --workspace --locked
       - name: test
-        run: cargo test --locked
+        run: cargo test --workspace --locked
       # - name: nextest
       #   uses: taiki-e/install-action@cargo-nextest
       #   run: cargo nextest run --locked

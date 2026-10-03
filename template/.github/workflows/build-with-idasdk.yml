@@ -48,11 +48,11 @@ jobs:
       - name: clippy
         env:
           IDASDKDIR: "{% raw %}${{ runner.temp }}{% endraw %}/idasdk"
-        run: cargo clippy --all-targets -- -D warnings
+        run: cargo clippy --workspace --all-targets --locked -- -D warnings
       - name: build
         env:
           IDASDKDIR: "{% raw %}${{ runner.temp }}{% endraw %}/idasdk"
-        run: cargo build
+        run: cargo build --workspace --locked
 
   build-macos:
     name: build-macos
@@ -80,7 +80,7 @@ jobs:
       - name: build
         env:
           IDASDKDIR: "{% raw %}${{ runner.temp }}{% endraw %}/idasdk"
-        run: cargo build
+        run: cargo build --workspace --locked
 
   build-windows:
     name: build-windows
@@ -115,4 +115,4 @@ jobs:
       - name: build
         env:
           IDASDKDIR: "{% raw %}${{ runner.temp }}{% endraw %}/idasdk"
-        run: cargo build
+        run: cargo build --workspace --locked

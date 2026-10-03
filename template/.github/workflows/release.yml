@@ -66,7 +66,7 @@ jobs:
           TARGET: {% raw %}${{ matrix.target }}{% endraw %}
         shell: bash
         run: |
-          cargo build --release --locked --manifest-path lsp/Cargo.toml --target "$TARGET"
+          cargo build --release --locked --target "$TARGET"
       - name: dependencies
         if: matrix.os == 'ubuntu-latest'
         uses: taiki-e/install-action@184183c2401be73c3bf42c2e61268aa5855379c1 # v2.78.1
@@ -78,7 +78,7 @@ jobs:
           TARGET: {% raw %}${{ matrix.target }}{% endraw %}
         shell: bash
         run: |
-          cross build --release --locked --manifest-path lsp/Cargo.toml --target "$TARGET"
+          cross build --release --locked --target "$TARGET"
       - name: package
         env:
           TARGET: {% raw %}${{ matrix.target }}{% endraw %}
