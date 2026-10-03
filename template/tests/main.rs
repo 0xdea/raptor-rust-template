@@ -1,38 +1,53 @@
-//! Integration tests driving the compiled `{{project-name}}` binary end-to-end to exercise `run`'s functionality.
+//! Integration tests driving the compiled `{{project-name}}` binary.
 
 #![expect(clippy::expect_used, reason = "tests can use `expect`")]
 
-/// Absolute path to the compiled `{{project-name}}` binary under test.
-const BIN: &str = env!("CARGO_BIN_EXE_{{project-name}}");
-
 #[cfg(test)]
 mod tests {
-    use std::process::{Command, Stdio};
+    use std::process::{Command, Output};
 
-    use super::BIN;
+    /// Absolute path to the compiled `{{project-name}}` binary under test.
+    const BIN: &str = env!("CARGO_BIN_EXE_{{project-name}}");
 
-    /// Asserts that `stderr` mentions `expected_message`, given verbose mode was enabled for the run.
-    fn assert_stderr_contains(stderr: &str, expected_message: &str) {
+    /// Runs the binary under test with `args` and returns its output.
+    fn run_bin(args: &[&str]) -> Output {
+        Command::new(BIN)
+            .args(args)
+            .output()
+            .expect("failed to spawn the binary under test")
+    }
+
+    /// Asserts that `stderr` of `output` contains `expected`.
+    fn assert_stderr_contains(output: &Output, expected: &str) {
+        let stderr = String::from_utf8_lossy(&output.stderr);
         assert!(
-            stderr.contains(expected_message),
-            "expected stderr to contain {expected_message:?}, got: {stderr:?}"
+            stderr.contains(expected),
+            "expected stderr to contain {expected:?}, got: {stderr:?}"
         );
     }
 
     #[test]
-    fn run_without_a_tty_fails() {
-        let output = Command::new(BIN)
-            .arg("-v")
-            .stdin(Stdio::null())
-            .output()
-            .expect("failed to spawn the binary under test");
+    fn no_arguments_runs_the_default_action() {
+        let output = run_bin(&[]);
 
-        assert!(
-            !output.status.success(),
-            "expected the binary to fail without a controlling tty"
-        );
+        assert!(output.status.success(), "the default action should succeed");
+    }
 
-        let stderr = String::from_utf8_lossy(&output.stderr);
-        assert_stderr_contains(&stderr, "stdin does not refer to a terminal");
+    #[test]
+    fn help_flag_prints_usage_and_fails() {
+        for flag in ["-h", "--help"] {
+            let output = run_bin(&[flag]);
+
+            assert!(!output.status.success(), "{flag} should fail");
+            assert_stderr_contains(&output, "Usage:");
+        }
+    }
+
+    #[test]
+    fn empty_action_reports_an_error() {
+        let output = run_bin(&[""]);
+
+        assert!(!output.status.success(), "an empty action should fail");
+        assert_stderr_contains(&output, "[!] Error: empty action");
     }
 }
