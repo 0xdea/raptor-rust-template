@@ -1,4 +1,4 @@
-//! main.rs.
+//! Command-line entry point for `{{project-name}}`.
 
 // Standard library imports.
 use std::env;
@@ -37,17 +37,14 @@ fn main() -> ExitCode {
         };
     }
 
-    vprintln!("{PROGRAM} {VERSION} - {{short-desc}}");
+    vprintln!("{PROGRAM} {VERSION} - {DESCRIPTION}");
     vprintln!("Copyright (c) {{year}} {AUTHORS}");
     vprintln!();
 
-    match {{project-name}}::run() {
-        Ok(()) => {
-            {{project-name}}::clear_terminal(LINES);
-            ExitCode::SUCCESS
-        }
-        Err(error) => {
-            vprintln!("[!] Error: {error:#}");
+    match {{crate_name}}::run(OsStr::new("default")) {
+        Ok(()) => ExitCode::SUCCESS,
+        Err(err) => {
+            vprintln!("[!] Error: {err:#}");
             ExitCode::FAILURE
         }
     }
@@ -76,8 +73,8 @@ fn main() -> ExitCode {
     };
 
     // Let's do it.
-    match {{project-name}}::run(action) {
-        Ok(_) => ExitCode::SUCCESS,
+    match {{crate_name}}::run(&action) {
+        Ok(()) => ExitCode::SUCCESS,
         Err(err) => {
             eprintln!("[!] Error: {err:#}");
             ExitCode::FAILURE
