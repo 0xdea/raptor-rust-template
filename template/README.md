@@ -48,7 +48,7 @@ cargo add {{project-name}}
 Alternatively, you can build from [source](https://github.com/0xdea/{{project-name}}):
 
 ```sh
-git clone https://github.com/0xdea/{{project-name}}
+git clone --depth 1 https://github.com/0xdea/{{project-name}}
 cd {{project-name}}
 cargo build --release --locked
 ```
