@@ -17,7 +17,7 @@ concurrency:
 env:
   CARGO_TERM_COLOR: always
   SCCACHE_GHA_ENABLED: "true"
-  RUSTC_WRAPPER: "sccache"
+  SCCACHE_IDLE_TIMEOUT: "0"
 
 jobs:
   build-linux-plus-checks:
@@ -37,6 +37,15 @@ jobs:
           cache-directories: ~/.cargo/advisory-db
       - name: sccache
         uses: mozilla-actions/sccache-action@9e7fa8a12102821edf02ca5dbea1acd0f89a2696 # v0.0.10
+      - name: sccache health check
+        shell: bash
+        run: |
+          if err=$(sccache --start-server 2>&1 >/dev/null); then
+            echo "RUSTC_WRAPPER=sccache" >> "$GITHUB_ENV"
+          else
+            echo "$err"
+            echo "::warning::sccache unavailable, building without cache: ${err%%$'\n'*}"
+          fi
       # - name: dependencies
       #   run: |
       #     sudo apt-get update
@@ -79,6 +88,15 @@ jobs:
         uses: actions-rust-lang/setup-rust-toolchain@150fca883cd4034361b621bd4e6a9d34e5143606 # v1.15.4
       - name: sccache
         uses: mozilla-actions/sccache-action@9e7fa8a12102821edf02ca5dbea1acd0f89a2696 # v0.0.10
+      - name: sccache health check
+        shell: bash
+        run: |
+          if err=$(sccache --start-server 2>&1 >/dev/null); then
+            echo "RUSTC_WRAPPER=sccache" >> "$GITHUB_ENV"
+          else
+            echo "$err"
+            echo "::warning::sccache unavailable, building without cache: ${err%%$'\n'*}"
+          fi
       - name: build
         run: cargo build --workspace --locked
       - name: test
@@ -101,6 +119,15 @@ jobs:
         uses: actions-rust-lang/setup-rust-toolchain@150fca883cd4034361b621bd4e6a9d34e5143606 # v1.15.4
       - name: sccache
         uses: mozilla-actions/sccache-action@9e7fa8a12102821edf02ca5dbea1acd0f89a2696 # v0.0.10
+      - name: sccache health check
+        shell: bash
+        run: |
+          if err=$(sccache --start-server 2>&1 >/dev/null); then
+            echo "RUSTC_WRAPPER=sccache" >> "$GITHUB_ENV"
+          else
+            echo "$err"
+            echo "::warning::sccache unavailable, building without cache: ${err%%$'\n'*}"
+          fi
       - name: build
         run: cargo build --workspace --locked
       - name: test
