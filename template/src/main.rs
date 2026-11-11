@@ -37,7 +37,8 @@ fn main() -> ExitCode {
         };
     }
 
-    vprintln!("{PROGRAM} {VERSION} - {DESCRIPTION}");
+    let description = DESCRIPTION.strip_suffix('.').unwrap_or(DESCRIPTION);
+    vprintln!("{PROGRAM} {VERSION} - {description}");
     vprintln!("Copyright (c) {{year}} {AUTHORS}");
     vprintln!();
 
@@ -50,7 +51,8 @@ fn main() -> ExitCode {
     }
     */
 
-    eprintln!("{PROGRAM} {VERSION} - {DESCRIPTION}");
+    let description = DESCRIPTION.strip_suffix('.').unwrap_or(DESCRIPTION);
+    eprintln!("{PROGRAM} {VERSION} - {description}");
     eprintln!("Copyright (c) {{year}} {AUTHORS}");
     eprintln!();
 
