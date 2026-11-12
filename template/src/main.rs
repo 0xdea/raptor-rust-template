@@ -37,10 +37,10 @@ fn main() -> ExitCode {
         };
     }
 
-    let description = DESCRIPTION.strip_suffix('.').unwrap_or(DESCRIPTION);
-    vprintln!("{PROGRAM} {VERSION} - {description}");
-    vprintln!("Copyright (c) {{year}} {AUTHORS}");
-    vprintln!();
+    vprintln!(
+        "{PROGRAM} {VERSION} - {}\nCopyright (c) {{year}} {AUTHORS}\n",
+        DESCRIPTION.trim_end_matches('.')
+    );
 
     match {{crate_name}}::run(OsStr::new("default")) {
         Ok(()) => ExitCode::SUCCESS,
@@ -51,10 +51,10 @@ fn main() -> ExitCode {
     }
     */
 
-    let description = DESCRIPTION.strip_suffix('.').unwrap_or(DESCRIPTION);
-    eprintln!("{PROGRAM} {VERSION} - {description}");
-    eprintln!("Copyright (c) {{year}} {AUTHORS}");
-    eprintln!();
+    eprintln!(
+        "{PROGRAM} {VERSION} - {}\nCopyright (c) {{year}} {AUTHORS}\n",
+        DESCRIPTION.trim_end_matches('.')
+    );
 
     // Parse command line arguments.
     //
