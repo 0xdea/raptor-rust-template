@@ -1,7 +1,5 @@
 //! Integration tests driving the compiled `{{project-name}}` binary.
 
-#![expect(clippy::expect_used, reason = "tests can use `expect`")]
-
 #[cfg(test)]
 mod tests {
     use std::process::{Command, Output};
