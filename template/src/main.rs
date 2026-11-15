@@ -56,6 +56,14 @@ fn main() -> ExitCode {
         DESCRIPTION.trim_end_matches('.')
     );
 
+    /*
+    // New API in `rust-version = "1.100"`.
+    eprintln!(
+        "{PROGRAM} {VERSION} - {}\nCopyright (c) {{year}} {AUTHORS}\n",
+        DESCRIPTION.trim_suffix('.')
+    );
+    */
+
     // Parse command line arguments.
     //
     // See https://github.com/0xdea/singsing-rs for an example with clap.
