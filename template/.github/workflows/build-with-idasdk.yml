@@ -56,6 +56,7 @@ jobs:
         run: cargo fmt --all --check
       - name: clippy
         env:
+          CARGO_BUILD_WARNINGS: deny
           IDASDKDIR: "{% raw %}${{ runner.temp }}{% endraw %}/idasdk"
         run: cargo clippy --workspace --all-targets --locked -- -D warnings
       - name: build
