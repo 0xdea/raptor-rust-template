@@ -28,6 +28,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           submodules: true
+        # zizmor: ignore[artipacked] -- persisted credentials are needed to push generated docs to gh-pages below
       - name: prepare IDA SDK
         env:
           IDASDK_URL: {% raw %}${{ secrets.IDASDK_URL }}{% endraw %}
