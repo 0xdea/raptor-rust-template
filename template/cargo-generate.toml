@@ -1,6 +1,12 @@
 [template]
 cargo_generate_version = ">=0.10.0"
 exclude = ["*.png"]
+# workflow files that are only kept for reference
+ignore = [
+    ".github/workflows/build-with-idasdk.yml",
+    ".github/workflows/doc.yml",
+    ".github/workflows/doc-with-idasdk.yml",
+]
 
 [hooks]
 init = ["init-script.rhai"]
