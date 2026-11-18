@@ -5,7 +5,7 @@
 [![](https://img.shields.io/crates/d/{{project-name}}?style=flat&color=red)](https://crates.io/crates/{{project-name}})
 [![](https://img.shields.io/badge/todo-0.1.1-purple)](https://todo.com/)
 [![](https://img.shields.io/badge/mastodon-%40raptor-blue.svg)](https://infosec.exchange/@raptor)
-[![build](https://github.com/0xdea/{{project-name}}/actions/workflows/build.yml/badge.svg)](https://github.com/0xdea/{{project-name}}/actions/workflows/build.yml)
+[![build](https://img.shields.io/github/actions/workflow/status/0xdea/{{project-name}}/build.yml?label=build)](https://github.com/0xdea/{{project-name}}/actions/workflows/build.yml)
 [![doc](https://img.shields.io/docsrs/{{project-name}})](https://docs.rs/{{project-name}})
 
 > "It's important to be quotable."
