@@ -69,6 +69,7 @@ jobs:
         with:
           target: {% raw %}${{ matrix.target }}{% endraw %}
           cache: false
+          build-warnings: warn
       - name: dependencies
         uses: taiki-e/install-action@c509219cf42fba86913069efd0ade2458c59337b # v2.90.1
         with:
